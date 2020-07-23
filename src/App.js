@@ -6,16 +6,18 @@ import Register from './components/Register'
 import Home from './components/Home'
 import Signin from './components/Signin'
 import NotFound from './components/NotFound'
-import Navbar from './components/Navbar'
+import Menu from './components/Menu'
+import Logout from './components/Logout'
 
 function App() {
   return (
     <main>
+      <Menu />
       <Switch>
-        <Navbar />
-        <Route path='/' component={Home} />
+        <Route exact path='/' component={Home} />
         <Route path='/register' component={Register} />
         <Route path='/signin' component={Signin} />
+        <Route path='/signout' component={Logout} />
         <Route component={NotFound} />
       </Switch>
     </main>
