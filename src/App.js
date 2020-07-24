@@ -15,9 +15,9 @@ function App() {
       <Menu />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/register' component={Register} />
-        <Route path='/signin' component={Signin} />
-        <Route path='/signout' component={Logout} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/signin' component={Signin} />
+        <Route exact path='/signout' component={Logout} />
         <Route component={NotFound} />
       </Switch>
     </main>
