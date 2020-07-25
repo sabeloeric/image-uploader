@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Register from './components/Register'
@@ -8,6 +8,7 @@ import Signin from './components/Signin'
 import NotFound from './components/NotFound'
 import Menu from './components/Menu'
 import Logout from './components/Logout'
+import Uploud from './components/Upload'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/register' component={Register} />
         <Route exact path='/signin' component={Signin} />
         <Route exact path='/signout' component={Logout} />
+        <Route exact path='/uploud' component={Uploud} />
         <Route component={NotFound} />
       </Switch>
     </main>
