@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import firebaseApp from "../config/firebase";
 import { Form, Button, Container } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
+import firebase from 'firebase'
 
 export default function Upload() {
   const [imageAsFile, setImageAsFile] = useState();
@@ -26,6 +27,7 @@ export default function Upload() {
             setImageAsUrl(fireBaseUrl)
             
             addImageToDB(fireBaseUrl);
+            
 
             
           });
@@ -51,20 +53,25 @@ export default function Upload() {
   const addImageToDB = (url) => {
     let imageId = uuidv4();
 
+    var user = firebase.auth().currentUser;
+
+    let userEmail = user.email
+
     firebaseApp
       .database()
       .ref("images/" + imageId)
       .set({
+        userEmail,
         imageId,
         imageAsUrl: url,
         title: title,
         description: description,
       })
       .then(() => {
-        console.log("inside database");
+        alert('Uploud Success')
       })
       .catch((error) => {
-        console.log(error);
+        alert(error);
       });
   };
 
