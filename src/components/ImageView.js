@@ -1,19 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Card, Button } from "react-bootstrap";
 
-export default function ImageView() {
+export default function ImageView({image}) {
+
   return (
     <div>
       <Container>
         <Card style={{ width: "100%" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Img variant="top" src={image.imageAsUrl} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{image.title}</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {image.desctription}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Delete</Button>
           </Card.Body>
         </Card>
       </Container>

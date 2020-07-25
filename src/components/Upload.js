@@ -23,7 +23,6 @@ export default function Upload() {
           .getDownloadURL()
           .then((fireBaseUrl) => {
         
-            console.log(fireBaseUrl)
             setImageAsUrl(fireBaseUrl)
             
             addImageToDB(fireBaseUrl);
@@ -56,6 +55,7 @@ export default function Upload() {
       .database()
       .ref("images/" + imageId)
       .set({
+        imageId,
         imageAsUrl: url,
         title: title,
         description: description,
