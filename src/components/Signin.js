@@ -3,6 +3,7 @@ import React , {useState} from "react";
 import {Form, Button, Container} from 'react-bootstrap'
 
 import firebaseApp from '../config/firebase'
+import LoginWithGoogle from '../components/LoginWithGoogle'
 
 export default function Signin() {
 
@@ -60,6 +61,18 @@ export default function Signin() {
             Login
           </Button>
         </Form>
+      </Container>
+
+      <Container>
+
+      <p>Or</p>
+      
+      </Container>
+         
+      
+      
+      <Container>
+        <LoginWithGoogle />
       </Container>
     </div>
   );
